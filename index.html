@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Command Sequencer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+        <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./css/styles.css" media="all">
+        <link rel="stylesheet" href="./css/widescreen.css" media="(min-width: 600px)">-->
+
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+        <script src="./scripts/cmd-seq.js" defer></script>
+
+    </head>
+    <body>
+        <header><h1>Command Sequencer</h1></header>
+        <main>
+            <div id="buttons">
+                <button id="add_row">+</button>
+                <button id="remove_row">-</button>
+            </div>
+            <div id="cmd_input">
+                <form action="#" class="cmd_row">
+                    <input type="text" name="Command" id="command">
+                    <input type="number" name="Time" id="time">
+                    <select name="Type" id="pulsetype">
+                        <option value="impulse" selected>Impulse</option>
+                        <option value="repeat">Repeating</option>
+                    </select>
+                </form>
+            </div>
+            <div id="cmd_output">
+                <h3>Results</h3>
+                <div id="list_of_commands">Results</div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>
