@@ -9,8 +9,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
-        <!--<link rel="stylesheet" href="./styles/widescreen.css" media="(min-width: 600px)">-->
         <link rel="stylesheet" href="./styles/style.css" media="all">
+        <link rel="stylesheet" href="./styles/widescreen.css" media="(min-width: 700px)">
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
         <script src="./scripts/cmd-seq.js" defer></script>
@@ -20,20 +20,24 @@
         <noscript>Your browser is not supported. Please enable JavaScript.</noscript>
         <header><h1>CMD-SEQ</h1></header>
         <main>
-            <div id="buttons">
-                <button id="add_row">+</button>
-                <button id="remove_row">-</button>
-                <input type="text" name="Function Prefix" placeholder="Prefix" id="cmd_prefix">
-            </div>
-            <div id="cmd_input">
-                <form action="#" class="cmd_row">
-                    <input type="text" class="user_input" name="Command" placeholder="Command" id="command">
-                    <input type="number" min="0" value="1" name="Time" id="time">
-                    <select name="Type" id="pulsetype">
-                        <option value="impulse" selected>Impulse</option>
-                        <option value="repeat">Repeating</option>
-                    </select>
-                </form>
+            <div id="responsive_layout">
+                <div id="buttons">
+                    <div>
+                        <button id="add_row">+</button>
+                        <button id="remove_row">-</button>
+                        <input type="text" name="Function Prefix" placeholder="Prefix" id="cmd_prefix">
+                    </div>
+                </div>
+                <div id="cmd_input">
+                    <form action="#" class="cmd_row">
+                        <input type="text" class="user_input" name="Command" placeholder="Command" id="command">
+                        <input type="number" min="0" value="1" name="Time" id="time">
+                        <select name="Type" id="pulsetype">
+                            <option value="impulse" selected>Impulse</option>
+                            <option value="repeat">Repeating</option>
+                        </select>
+                    </form>
+                </div>
             </div>
             <div id="cmd_output">
                 <h3>Results</h3>
