@@ -73,6 +73,10 @@ function updateResult(){
         // Adds the command to the final output
         html += `execute if score value ${cmd_objective} matches ${realTicks} run ${command}\n`;
     });
+
+    //
+    html += `execute if score value ${cmd_objective} matches ${totalTicks + 1} run scoreboard players reset value ${cmd_objective}`;
+
     // Updates the code block with the final output
     $(`#list_of_commands`).html(html)
 }
