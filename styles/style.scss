@@ -46,6 +46,7 @@ main{
 
 h3{
     margin-top: 0;
+    margin-bottom: 0;
     padding: 1em;
     @include top_bar;
     text-align: initial;
@@ -65,7 +66,6 @@ pre{
 
 #buttons{
     @include centered_inputs;
-    width: 100%;
     background-color: $options-color;
 }
 
@@ -75,4 +75,10 @@ pre{
 
 #cmd_input{
     flex: 1;
+}
+
+#all_commands{
+    padding: 1em;
+    max-height: 10vh;
+    overflow-y: auto;
 }

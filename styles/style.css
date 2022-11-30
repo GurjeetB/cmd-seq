@@ -28,6 +28,7 @@ main {
 
 h3 {
   margin-top: 0;
+  margin-bottom: 0;
   padding: 1em;
   background-color: #1c313a;
   color: white;
@@ -58,7 +59,6 @@ pre {
   flex-direction: row;
   margin: auto;
   padding: 0.5em 1em;
-  width: 100%;
   background-color: rgb(218, 218, 218);
 }
 #buttons input#command {
@@ -71,4 +71,10 @@ pre {
 
 #cmd_input {
   flex: 1;
+}
+
+#all_commands {
+  padding: 1em;
+  max-height: 10vh;
+  overflow-y: auto;
 }/*# sourceMappingURL=style.css.map */
