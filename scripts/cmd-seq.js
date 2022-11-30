@@ -16,6 +16,20 @@ function addCommandRow(){
     updateResult();
 }
 
+// Defines the function for removing the most recent event
+function removeCommandRow(){
+    // Counts how many rows there are
+    let numberOfRows = $(`.cmd_row`).length;
+    // If there's more than 1 row:
+    if( numberOfRows > 1 ){
+        // Removes the most recent row
+        $(`.cmd_row`).last().remove();
+    }
+
+    // Updates the final result
+    updateResult();
+}
+
 // Defines the function for updating the final result
 function updateResult(){
     let html = ``;
@@ -63,6 +77,7 @@ function updateResult(){
 updateResult();
 
 $(`#add_row`).click(addCommandRow);
+$(`#remove_row`).click(removeCommandRow);
 
 $(`#cmd_prefix`).change(updateResult);
 $(`#cmd_input`).change(updateResult);
