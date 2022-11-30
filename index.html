@@ -17,16 +17,18 @@
 
     </head>
     <body>
-        <header><h1>Command Sequencer</h1></header>
+        <noscript>Your browser is not supported. Please enable JavaScript.</noscript>
+        <header><h1>CMD-SEQ</h1></header>
         <main>
             <div id="buttons">
                 <button id="add_row">+</button>
                 <button id="remove_row">-</button>
+                <input type="text" name="Function Prefix" placeholder="Prefix" id="cmd_prefix">
             </div>
             <div id="cmd_input">
                 <form action="#" class="cmd_row">
-                    <input type="text" name="Command" id="command">
-                    <input type="number" name="Time" id="time">
+                    <input type="text" name="Command" placeholder="Command" id="command">
+                    <input type="number" min="0" value="0" name="Time" id="time">
                     <select name="Type" id="pulsetype">
                         <option value="impulse" selected>Impulse</option>
                         <option value="repeat">Repeating</option>
@@ -35,9 +37,13 @@
             </div>
             <div id="cmd_output">
                 <h3>Results</h3>
-                <div id="list_of_commands">Results</div>
+                <pre id="objective_creator"></pre>
+                <pre id="sequence_starter"></pre>
+                <pre id="list_of_commands"></pre>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            
+        </footer>
     </body>
 </html>
