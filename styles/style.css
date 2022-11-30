@@ -18,7 +18,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  overflow: hidden;
 }
 
 main {
@@ -40,6 +39,10 @@ pre {
   width: 100%;
 }
 
+.user_input {
+  padding: 0.5em;
+}
+
 .cmd_row {
   display: flex;
   flex-direction: row;
@@ -55,6 +58,8 @@ pre {
   flex-direction: row;
   margin: auto;
   width: 100%;
+  padding: 1em;
+  background-color: rgb(218, 218, 218);
 }
 #buttons input#command {
   flex: 1;

@@ -27,8 +27,8 @@
             </div>
             <div id="cmd_input">
                 <form action="#" class="cmd_row">
-                    <input type="text" name="Command" placeholder="Command" id="command">
-                    <input type="number" min="0" value="0" name="Time" id="time">
+                    <input type="text" class="user_input" name="Command" placeholder="Command" id="command">
+                    <input type="number" min="0" value="1" name="Time" id="time">
                     <select name="Type" id="pulsetype">
                         <option value="impulse" selected>Impulse</option>
                         <option value="repeat">Repeating</option>
@@ -37,13 +37,15 @@
             </div>
             <div id="cmd_output">
                 <h3>Results</h3>
-                <pre id="objective_creator"></pre>
-                <pre id="sequence_starter"></pre>
-                <pre id="list_of_commands"></pre>
+                <div id="all_commands">
+                    <pre id="objective_creator"></pre>
+                    <pre id="sequence_starter"></pre>
+                    <pre id="list_of_commands"></pre>
+                </div>
             </div>
         </main>
         <footer>
-            Created by Gurj
+            <h4>Created by Gurj</h4>
         </footer>
     </body>
 </html>
