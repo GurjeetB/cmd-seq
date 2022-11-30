@@ -1,0 +1,68 @@
+$background-color: white;
+$header-color: #1c313a;
+$text-color: white;
+$output-color: #233752;
+
+@mixin centered_inputs {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+
+    input#command{
+        flex: 1;
+    }
+}
+
+@mixin top_bar {
+    background-color: $header-color;
+    color: $text-color;
+    text-align: center;
+}
+
+header{
+    @include top_bar;
+}
+
+footer{
+    @include top_bar;
+}
+
+body{
+    min-width: 300px;
+    margin: auto;
+    background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    margin-top: 0;
+    padding: 1em;
+    @include top_bar;
+    text-align: initial;
+}
+
+pre{
+    width: 100%;
+}
+
+.cmd_row{
+    @include centered_inputs;
+}
+
+#buttons{
+    @include centered_inputs;
+}
+
+#cmd_input{
+    flex: 1;
+}
