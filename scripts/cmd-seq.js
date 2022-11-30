@@ -66,7 +66,7 @@ function updateResult(){
         // If the current command is set to repeat for the whole duration
         }else{
             // Runs the command for the whole duration
-            realTicks = `${initialTicks + 1} .. ${totalTicks}`;
+            realTicks = `${initialTicks + 1}..${totalTicks}`;
         }
         // The 
         initialTicks += Math.round(duration * 20);
