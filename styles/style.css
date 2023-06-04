@@ -60,6 +60,7 @@ pre {
   margin: auto;
   padding: 0.5em 1em;
   background-color: rgb(218, 218, 218);
+  flex-direction: column;
 }
 #buttons input#command {
   flex: 1;

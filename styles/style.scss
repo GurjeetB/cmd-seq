@@ -67,6 +67,7 @@ pre{
 #buttons{
     @include centered_inputs;
     background-color: $options-color;
+    flex-direction: column;
 }
 
 #responsive_layout{
