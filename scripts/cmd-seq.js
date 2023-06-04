@@ -29,49 +29,42 @@ function removeCommandRow(){
 // Defines the function for updating the final result
 function updateResult(){
     let html = ``;
-    // Determines when the function starts running commands
-    let initialTicks = 0;
-    // Determines when the function stops running commands
-    let totalTicks = 0;
-    let realTicks = ``;
+    // Lists all timestamps
+    const allTimestamps = [];
     // Fetches the selected function prefix
-    let cmd_objective = `${$(`#cmd_prefix`).val()}_timer`;
+    let cmd_objective = `${$(`#cmd_prefix`).val()}`;
 
     // Updates the command for creating the scoreboard
     $(`#objective_creator`).html(`scoreboard objectives add ${cmd_objective} dummy`);
 
     // Updates the command for starting the sequence
-    $(`#sequence_starter`).html(`scoreboard players add value ${cmd_objective} 0`);
+    $(`#sequence_starter`).html(`scoreboard players add time ${cmd_objective} 0`);
 
     // Updates the command for making the sequence progress
-    html += `execute if score value ${cmd_objective} matches 0.. run scoreboard players add value ${cmd_objective} 1\n`;
+    html += `execute if score time ${cmd_objective} matches 0.. run scoreboard players add value ${cmd_objective} 1\n`;
 
     // For each form:
     $(`form`).each(function(){
         // Fetches all user input
-        let command = $(this).find(`#command`).val();
-        let duration = $(this).find(`#time`).val();
-        let pulse = $(this).find(`select#pulsetype`).val();
-        // Gets the current total time
-        totalTicks += Math.round(duration * 20);
+        let command = $(this).find(`.dialogue`).val();
+        let timestamp = $(this).find(`.timestamp`).val();
 
-        // If the current command is set to run once
-        if(pulse == "impulse"){
-            // Runs the command only once
-            realTicks = `${initialTicks + 1}`;
-        // If the current command is set to repeat for the whole duration
-        }else{
-            // Runs the command for the whole duration
-            realTicks = `${initialTicks + 1}..${totalTicks}`;
-        }
-        // The 
-        initialTicks += Math.round(duration * 20);
+        // Adds the timestamp to the list
+        allTimestamps.push(timestamp);
+
+        // Gets the timestamp equivalent in ticks
+        let timestampInTicks = Math.round(timestamp * 20);
+
         // Adds the command to the final output
-        html += `execute if score value ${cmd_objective} matches ${realTicks} run ${command}\n`;
+        html += `execute if score time ${cmd_objective} matches ${timestampInTicks} run ${command}\n`;
     });
 
-    //
-    html += `execute if score value ${cmd_objective} matches ${totalTicks + 1} run scoreboard players reset value ${cmd_objective}`;
+    // Sorts all timestamps by highest to lowest
+    allTimestamps.sort(function(a, b){return b-a});
+    // Gets the highest timestamp
+    let finalTick = Math.round(allTimestamps[0] * 20 + 1)
+    // Resets the scoreboard after
+    html += `execute if score time ${cmd_objective} matches ${finalTick} run scoreboard players reset time ${cmd_objective}`;
 
     // Updates the code block with the final output
     $(`#list_of_commands`).html(html)
