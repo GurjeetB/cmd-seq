@@ -9,7 +9,7 @@ function addCommandRow(){
     `);
 
     // Updates the final result
-    updateResult();
+    refreshPage();
 }
 
 // Defines the function for removing the most recent event
@@ -23,7 +23,11 @@ function removeCommandRow(){
     }
 
     // Updates the final result
-    updateResult();
+    refreshPage();
+}
+
+function refreshPage() {
+    $(`#list_of_commands`).html(updateResult)
 }
 
 // Defines the function for updating the final result
@@ -66,14 +70,13 @@ function updateResult(){
     // Resets the scoreboard after
     html += `execute if score time ${cmd_objective} matches ${finalTick} run scoreboard players reset time ${cmd_objective}`;
 
-    // Updates the code block with the final output
-    $(`#list_of_commands`).html(html)
+    return html;
 }
 
-updateResult();
+refreshPage();
 
 $(`#add_row`).click(addCommandRow);
 $(`#remove_row`).click(removeCommandRow);
 
-$(`#cmd_prefix`).change(updateResult);
-$(`#cmd_input`).change(updateResult);
+$(`#cmd_prefix`).change(refreshPage);
+$(`#cmd_input`).change(refreshPage);
