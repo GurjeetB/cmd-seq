@@ -9,4 +9,8 @@
 }
 #responsive_layout #cmd_input {
   flex: 1;
+}
+
+input.timestamp {
+  width: 20%;
 }/*# sourceMappingURL=widescreen.css.map */

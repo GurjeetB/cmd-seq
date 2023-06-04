@@ -3,13 +3,9 @@ function addCommandRow(){
     // It adds a form. That's literally it
     $(`#cmd_input`).append(`
     <form action="#" class="cmd_row">
-                    <input type="text" class="user_input" name="Command" placeholder="Command" id="command">
-                    <input type="number" min="0" value="1" name="Time" id="time">
-                    <select name="Type" id="pulsetype">
-                        <option value="impulse" selected>Impulse</option>
-                        <option value="repeat">Repeating</option>
-                    </select>
-                </form>
+                        <input type="text" class="user_input dialogue" name="Dialogue" placeholder="Dialogue">
+                        <input type="number" class="user_input timestamp" min="0" name="Time" placeholder="Timestamp (seconds)">
+                    </form>
     `);
 
     // Updates the final result

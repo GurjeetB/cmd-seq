@@ -9,10 +9,6 @@ $options-color: rgb(218, 218, 218);
     flex-direction: row;
     margin: auto;
     padding: 0.5em 1em;
-
-    input#command{
-        flex: 1;
-    }
 }
 
 @mixin top_bar {
@@ -54,6 +50,14 @@ h3{
 
 pre{
     width: 100%;
+}
+
+input.dialogue{
+    flex: 1;
+}
+
+input.timestamp {
+    width: 30%;
 }
 
 .user_input{
