@@ -73,6 +73,14 @@ function updateResult(){
     return html;
 }
 
+function loadFromStorage() {
+    console.log(`unfinished`);
+}
+
+function saveToStorage() {
+    console.log(`unfinished`);
+}
+
 refreshPage();
 
 $(`#add_row`).click(addCommandRow);
@@ -80,3 +88,6 @@ $(`#remove_row`).click(removeCommandRow);
 
 $(`#cmd_prefix`).change(refreshPage);
 $(`#cmd_input`).change(refreshPage);
+
+$(`#save_to_storage`).click(saveToStorage);
+$(`#load_from_storage`).click(loadFromStorage);
